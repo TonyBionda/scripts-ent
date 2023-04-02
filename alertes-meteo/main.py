@@ -101,16 +101,10 @@ def add_json_info(filepath, file_date):
 
 
 def create_global_json():
-    grouped_data = {}
-    for item in data:
-        date = item['date']
-        if date not in grouped_data:
-            grouped_data[date] = []
-        grouped_data[date].append(item)
-
+    # Supprime
     # écrire les données dans un fichier JSON
     with open('global_data.json', 'w') as f:
-        json.dump(grouped_data, f)
+        json.dump(data, f)
 
 
 download_files(2012, 2014)
